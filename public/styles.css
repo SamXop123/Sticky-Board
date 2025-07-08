@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'lemon_milkregular';
+    src: url('/lemonmilk-regular-webfont.woff2') format('woff2'),
+        url('/lemonmilk-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('/sticky-bg.jpeg');
+    background-color: rgb(46, 46, 46);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'lemon_milkregular', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 40px;
+    font-weight: 300;
+    font-size: 50px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2x solid white;
+    width: 100vw;
+    height: 100vh;
+    margin-right: 20px;
+}
+
