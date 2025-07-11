@@ -48,7 +48,25 @@ button.addEventListener('click', () => {
                     body: JSON.stringify({ title, description })
                 })
                 .then(res => res.json())
-                
+                .then(() => {
+                    const noteId = Date.now();
+                    const note = document.createElement("div");
+                    note.className = "sticky-note";
+                    note.dataset.id = noteId;
+                    note.innerHTML = `<h2 class="note-title">${title}</h2><p class="note-desc">${description}</p>`;
+
+                    const popup = rightCont.querySelector(".popup");
+                    if (popup) {
+                        popup.classList.remove("visible");
+                        setTimeout(() => {
+                            rightCont.removeChild(popup);
+                            button.querySelector(".create-text").textContent = "Create!";
+                            button.querySelector(".create-text").classList.remove("close");
+                            button.innerHTML = button.innerHTML.replace("-", "+");
+                            isPopupOpen = false;
+                        }, 300);
+                    }
+                })
                 .catch(err => console.error('Error:', err));
             });
         }
