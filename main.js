@@ -19,6 +19,9 @@ app.post('/submit-task', (req, res) => {
   res.json({ id, title, description });
 });
 
+app.get('/tasks', (req, res) => {
+  res.json(tasks);
+});
 
 app.listen(port, () => {
   console.log(`StickyBoard Running on port ${port}`);
