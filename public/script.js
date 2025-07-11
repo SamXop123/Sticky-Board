@@ -25,5 +25,13 @@ button.addEventListener('click', () => {
         popupDiv.innerHTML = html;
         
         isPopupOpen = true;
+    } else {
+        let popup = rightCont.querySelector(".popup");
+        if (popup) {
+            popup.classList.remove("visible");
+            setTimeout(() => {
+                isPopupOpen = false;
+            }, 300); 
+        }
     }
 });
