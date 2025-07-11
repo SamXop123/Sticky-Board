@@ -23,6 +23,19 @@ button.addEventListener('click', () => {
 
         let popupDiv = document.createElement("div");
         popupDiv.innerHTML = html;
+        rightCont.appendChild(popupDiv.firstChild);
+
+        setTimeout(() => {
+            let popup = rightCont.querySelector(".popup");
+            if (popup) {
+                popup.classList.add("visible");
+            }
+        }, 10);
+
+        button.querySelector(".create-text").textContent = "Close!";
+        button.querySelector(".create-text").classList.add("close");
+        button.innerHTML = button.innerHTML.replace("+", "-");
+
         
         isPopupOpen = true;
     } else {
@@ -30,8 +43,12 @@ button.addEventListener('click', () => {
         if (popup) {
             popup.classList.remove("visible");
             setTimeout(() => {
+                rightCont.removeChild(popup);
+                button.querySelector(".create-text").textContent = "Create!";
+                button.querySelector(".create-text").classList.remove("close");
+                button.innerHTML = button.innerHTML.replace("-", "+");
                 isPopupOpen = false;
-            }, 300); 
+            }, 300);
         }
     }
 });
