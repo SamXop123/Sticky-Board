@@ -26,7 +26,7 @@ body {
 h1 {
     text-align: center;
     color: white;
-    font-family: 'lemon_milkregular', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'lemon_milkregular', 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
     margin-top: 40px;
     font-weight: 300;
     font-size: 50px;
@@ -41,5 +41,67 @@ h1 {
     width: 100vw;
     height: 100vh;
     margin-right: 20px;
+}
+
+.left {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+}
+
+.right {
+    width: 75vw;
+    height: 90vh;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 20px;
+    position: relative;
+}
+
+.plus {
+    color: white;
+    font-weight: 900;
+    font-family: 'Chatlong';
+    font-size: 72px;
+    background-color: rgb(165, 129, 38);
+    padding: 0px 15px;
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+.plus:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.plus .create-text {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%, 10px);
+    color: white;
+    font-family: 'lemon_milkregular', sans-serif;
+    font-size: 24px;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.plus:hover .create-text {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+.plus .create-text.close {
+    color: #86721f;
 }
 
