@@ -55,6 +55,25 @@ button.addEventListener('click', () => {
                     note.dataset.id = noteId;
                     note.innerHTML = `<h2 class="note-title">${title}</h2><p class="note-desc">${description}</p>`;
 
+                    // 3x3 grid positions (x, y) with 20px padding
+                    const gridPositions = [
+                        { x: '20px', y: '20px' },
+                        { x: `calc(25vw + 20px)`, y: '20px' },
+                        { x: `calc(50vw + 20px)`, y: '20px' },
+                        { x: '20px', y: `calc(30vh + 20px)` },
+                        { x: `calc(25vw + 20px)`, y: `calc(30vh + 20px)` },
+                        { x: `calc(50vw + 20px)`, y: `calc(30vh + 20px)` },
+                        { x: '20px', y: `calc(60vh + 20px)` },
+                        { x: `calc(25vw + 20px)`, y: `calc(60vh + 20px)` },
+                        { x: `calc(50vw + 20px)`, y: `calc(60vh + 20px)` }
+                    ];
+                    const position = gridPositions[noteCount % 9];
+                    note.style.left = position.x;
+                    note.style.top = position.y;
+                    rightCont.appendChild(note);
+
+                    noteCount++; 
+
                     const popup = rightCont.querySelector(".popup");
                     if (popup) {
                         popup.classList.remove("visible");
