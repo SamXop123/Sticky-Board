@@ -1,10 +1,9 @@
 @font-face {
     font-family: 'lemon_milkregular';
     src: url('/lemonmilk-regular-webfont.woff2') format('woff2'),
-        url('/lemonmilk-regular-webfont.woff') format('woff');
+         url('/lemonmilk-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 * {
@@ -26,7 +25,7 @@ body {
 h1 {
     text-align: center;
     color: white;
-    font-family: 'lemon_milkregular', 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-family: 'lemon_milkregular', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top: 40px;
     font-weight: 300;
     font-size: 50px;
@@ -37,10 +36,10 @@ h1 {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    border: 2x solid white;
-    width: 100vw;
+    /* gap: 100px; */
     height: 100vh;
-    margin-right: 20px;
+    width: 100vw;
+
 }
 
 .left {
@@ -65,12 +64,17 @@ h1 {
     color: #fff;
     padding: 20px;
     position: relative;
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr); 
+    gap: 20px; 
 }
 
 .plus {
+    position: relative;
     color: white;
     font-weight: 900;
-    font-family: 'Chatlong';
+    font-family: 'lemon_milkregular', sans-serif;
     font-size: 72px;
     background-color: rgb(165, 129, 38);
     padding: 0px 15px;
@@ -80,7 +84,7 @@ h1 {
 
 .plus:hover {
     transform: scale(1.1);
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
 
@@ -102,7 +106,7 @@ h1 {
 }
 
 .plus .create-text.close {
-    color: #86721f;
+    color: #facc15; /* Matches form button color for "Close!" */
 }
 
 .popup {
@@ -142,7 +146,6 @@ form {
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
 label {
@@ -171,20 +174,18 @@ button {
     color: #111;
 }
 
-
 .sticky-note {
-    user-select: none;  
     width: 250px;
-    min-height: 130px;
+    min-height: 200px;
     background-color: #fdf477;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     padding: 16px;
-    /* margin: 20px; */
+    margin: 0; /* Remove margin to fit grid */
     transform: rotate(-2deg);
     font-family: 'lemon_milkregular', sans-serif;
     color: #333;
-    position: relative;
+    position: absolute; /* Kept for compatibility, but grid will handle placement */
     transition: transform 0.2s;
 }
 
@@ -201,7 +202,6 @@ button {
 
 .sticky-note:hover {
     transform: rotate(0deg) scale(1.03);
-    cursor: pointer;
 }
 
 .note-title {
