@@ -105,3 +105,59 @@ h1 {
     color: #86721f;
 }
 
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 20px;
+    overflow: auto;
+    width: 40vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.popup.visible {
+    transform: translate(-50%, -50%) translateY(0);
+    opacity: 1;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    font-family: 'lemon_milkregular', sans-serif;
+    color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #2e2e2e;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
