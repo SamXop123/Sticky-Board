@@ -26,3 +26,5 @@ app.get('/tasks', (req, res) => {
 app.listen(port, () => {
   console.log(`StickyBoard Running on port ${port}`);
 });
+
+module.exports = app;
