@@ -1,13 +1,12 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const port = 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json()); 
 
 app.get('/', (req, res) => {
-  res.sendFile('templates/index.html', { root: __dirname });
+  res.sendFile(path.join(__dirname, 'templates', 'index.html'));
 });
 
 const tasks = [];
@@ -23,8 +22,8 @@ app.get('/tasks', (req, res) => {
   res.json(tasks);
 });
 
-app.listen(port, () => {
-  console.log(`StickyBoard Running on port ${port}`);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`StickyBoard Running on port ${process.env.PORT || 3000}`);
 });
 
 module.exports = app;
